@@ -1,59 +1,15 @@
-Express & ES6 REST API Boilerplate
+Basic Ethereum wallet 
 ==================================
 
-This is a straightforward boilerplate for building REST APIs with ES6 and Express.
+Functionalities:
 
-- ES6 support via [babel](https://babeljs.io)
-- REST resources as middleware via [resource-router-middleware](https://github.com/developit/resource-router-middleware)
-- CORS support via [cors](https://github.com/troygoode/node-cors)
-- Body Parsing via [body-parser](https://github.com/expressjs/body-parser)
+- Create a new wallet get('/createWallet')
+- Check the balance   get('/getBalance/:param')
+- Send a transaction  post('/transaction')
 
-> Tip: If you are using [Mongoose](https://github.com/Automattic/mongoose), you can automatically expose your Models as REST resources using [restful-mongoose](https://git.io/restful-mongoose).
+Libraries used: 
 
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/WbARjbDRQz5y3N6VBEMPU4LW/developit/express-es6-rest-api'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/WbARjbDRQz5y3N6VBEMPU4LW/developit/express-es6-rest-api.svg' />
-</a>
+- web3 https://web3js.readthedocs.io/en/1.0/index.html
+- ethereumjs-tx https://github.com/ethereumjs/ethereumjs-tx/blob/master/docs/index.md
 
-Getting Started
----------------
 
-```sh
-# clone it
-git clone git@github.com:developit/express-es6-rest-api.git
-cd express-es6-rest-api
-
-# Make it your own
-rm -rf .git && git init && npm init
-
-# Install dependencies
-npm install
-
-# Start development live-reload server
-PORT=8080 npm run dev
-
-# Start production server:
-PORT=8080 npm start
-```
-Docker Support
-------
-```sh
-cd express-es6-rest-api
-
-# Build your docker
-docker build -t es6/api-service .
-#            ^      ^           ^
-#          tag  tag name      Dockerfile location
-
-# run your docker
-docker run -p 8080:8080 es6/api-service
-#                 ^            ^
-#          bind the port    container tag
-#          to your host
-#          machine port   
-
-```
-
-License
--------
-
-MIT
